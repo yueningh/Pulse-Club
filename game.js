@@ -1,4 +1,4 @@
-const GAME_ENDPOINT = "/.netlify/functions/game";
+const GAME_ENDPOINT = "https://pulse-clubb.netlify.app/.netlify/functions/game";
 const $ = (id) => document.getElementById(id);
 const screens = ["home", "lobby", "game", "end"];
 const colors = ["#D94A36", "#ff6bb5", "#73dbff", "#ffb35c", "#b99aff", "#68edbd", "#ff8076", "#85a6ff"];
