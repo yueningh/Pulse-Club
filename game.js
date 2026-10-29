@@ -538,7 +538,79 @@ function resizeSummary() {
   box.style.height = box.scrollHeight + "px";
 }
 
-function funnyLines(list){let top=list[0],bestScore=top.score,leaders=list.filter(p=>p.score===bestScore).map(p=>p.name),best=Math.max(...list.map(p=>p.best)),streakLeaders=list.filter(p=>p.best===best).map(p=>p.name),totals={perfect:0,good:0,miss:0,rest:0};roundHistory.forEach(r=>(Array.isArray(r)?r:(r?.results||[])).forEach(x=>{if(Object.hasOwn(totals,x))totals[x]++}));let names=leaders.join(' & '),streakNames=streakLeaders.join(' & '),pick=a=>a[Math.floor(Math.random()*a.length)],winnerLines=[`${names} landed on top with ${bestScore.toLocaleString()} points.`,`${bestScore.toLocaleString()} points put ${names} at the head of the room.`,`The scoreboard's top spot belongs to ${names} with ${bestScore.toLocaleString()}.`,`At ${bestScore.toLocaleString()} points, ${names} set the pace.`,`Top score: ${bestScore.toLocaleString()}, posted by ${names}.`,`The night's highest total was ${bestScore.toLocaleString()} for ${names}.`,`The final score leaders are ${names} at ${bestScore.toLocaleString()} points.`,`The lead changed hands? The final board says ${names}: ${bestScore.toLocaleString()} points.`,`A ${bestScore.toLocaleString()}-point finish puts ${names} in the spotlight.`,`The room's high-water mark was ${bestScore.toLocaleString()}, reached by ${names}.`,`Give the top line a look: ${names} with ${bestScore.toLocaleString()}.`,`The final tally puts ${names} first${leaders.length>1?' together':''} at ${bestScore.toLocaleString()} points.`,`The rhythm report's headline score is ${bestScore.toLocaleString()} by ${names}.`,`The top of the table reads ${names} — ${bestScore.toLocaleString()} points.`,`The biggest point total belongs to ${names}: ${bestScore.toLocaleString()}.`,`The closing scoreboard gives ${names} ${bestScore.toLocaleString()} points and the lead.`,`The room's top result: ${names}, ${bestScore.toLocaleString()} points.`,`A final score of ${bestScore.toLocaleString()} leaves ${names} at the top.`,`The points column peaks at ${bestScore.toLocaleString()} for ${names}.`,`Tonight's highest score goes beside ${names}: ${bestScore.toLocaleString()}.`],streakLines=[`${streakNames} led the hit-streak chart with ${best} successful beats in a row.`,`Longest successful run: ${best} beats, led by ${streakNames}.`,`${streakNames} put together the longest run: ${best} good or perfect beats.`,`The streak counter topped out at ${best} for ${streakNames}.`,`${streakNames} kept the successful beats flowing for a best of ${best}.`,`Best run of good/perfect beats: ${best}, by ${streakNames}.`,`${streakNames} owns the longest hit streak at ${best} beats.`,`A ${best}-beat successful streak was the night's longest, led by ${streakNames}.`,`The longest chain of successful beats reached ${best} for ${streakNames}.`,`Streak stat: ${streakNames} reached ${best} consecutive good or perfect beats.`,`${streakNames} posted the top streak: ${best} successful beats without a miss.`,`The best hit run measured ${best} beats; ${streakNames} led the way.`,`${streakNames} stretched a good/perfect run to ${best} beats.`,`The rhythm streak record for this room is ${best}, shared by ${streakNames}.`,`${streakNames} set the best consecutive-hit mark at ${best}.`],resultLines=[`Your rounds counted ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, and ${totals.rest} rest beats.`,`Your beat ledger: ${totals.perfect} perfect · ${totals.good} good · ${totals.miss} missed · ${totals.rest} rest.`,`Across your rounds, ${totals.perfect} beats were perfect and ${totals.good} were good; ${totals.miss} were missed, with ${totals.rest} rests.`,`Your tally came to ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, plus ${totals.rest} rests.`,`Beat-by-beat: ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, and ${totals.rest} rests for you.`,`The recap shows ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, and ${totals.rest} rest beats.`,`Your scorecard has ${totals.perfect} perfect, ${totals.good} good, and ${totals.miss} missed beats; rests: ${totals.rest}.`,`Your rounds add up to ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, and ${totals.rest} rest beats.`,`The personal beat count: ${totals.perfect} perfect · ${totals.good} good · ${totals.miss} missed · ${totals.rest} rest.`,`You recorded ${totals.perfect} perfects and ${totals.good} goods, alongside ${totals.miss} misses and ${totals.rest} rests.`,`The stats say ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed beats, and ${totals.rest} rests for your run.`,`Your night in numbers: ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, ${totals.rest} rest.`,`Your beat report lists ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, and ${totals.rest} rests.`,`Final count for your run: ${totals.perfect} perfect · ${totals.good} good · ${totals.miss} miss · ${totals.rest} rest.`,`The rhythm recap tallies ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, and ${totals.rest} rests.`];return[pick(winnerLines),pick(streakLines),pick(resultLines)]}
+function funnyLines(list) {
+    let top = list[0],
+        bestScore = top.score,
+        leaders = list.filter((p) => p.score === bestScore).map((p) => p.name),
+        best = Math.max(...list.map((p) => p.best)),
+        streakLeaders = list.filter((p) => p.best === best).map((p) => p.name),
+        totals = { perfect: 0, good: 0, miss: 0, rest: 0 };
+    roundHistory.forEach((r) =>
+        (Array.isArray(r) ? r : r?.results || []).forEach((x) => {
+            if (Object.hasOwn(totals, x)) totals[x]++;
+        })
+    );
+    let names = leaders.join(" & "),
+        streakNames = streakLeaders.join(" & "),
+        pick = (a) => a[Math.floor(Math.random() * a.length)],
+        winnerLines = [
+            `${names} landed on top with ${bestScore.toLocaleString()} points.`,
+            `${bestScore.toLocaleString()} points put ${names} at the head of the room.`,
+            `The scoreboard's top spot belongs to ${names} with ${bestScore.toLocaleString()}.`,
+            `At ${bestScore.toLocaleString()} points, ${names} set the pace.`,
+            `Top score: ${bestScore.toLocaleString()}, posted by ${names}.`,
+            `The night's highest total was ${bestScore.toLocaleString()} for ${names}.`,
+            `The final score leaders are ${names} at ${bestScore.toLocaleString()} points.`,
+            `The lead changed hands? The final board says ${names}: ${bestScore.toLocaleString()} points.`,
+            `A ${bestScore.toLocaleString()}-point finish puts ${names} in the spotlight.`,
+            `The room's high-water mark was ${bestScore.toLocaleString()}, reached by ${names}.`,
+            `Give the top line a look: ${names} with ${bestScore.toLocaleString()}.`,
+            `The final tally puts ${names} first${leaders.length > 1 ? " together" : ""} at ${bestScore.toLocaleString()} points.`,
+            `The rhythm report's headline score is ${bestScore.toLocaleString()} by ${names}.`,
+            `The top of the table reads ${names} — ${bestScore.toLocaleString()} points.`,
+            `The biggest point total belongs to ${names}: ${bestScore.toLocaleString()}.`,
+            `The closing scoreboard gives ${names} ${bestScore.toLocaleString()} points and the lead.`,
+            `The room's top result: ${names}, ${bestScore.toLocaleString()} points.`,
+            `A final score of ${bestScore.toLocaleString()} leaves ${names} at the top.`,
+            `The points column peaks at ${bestScore.toLocaleString()} for ${names}.`,
+            `Tonight's highest score goes beside ${names}: ${bestScore.toLocaleString()}.`,
+        ],
+        streakLines = [
+            `${streakNames} led the hit-streak chart with ${best} successful beats in a row.`,
+            `Longest successful run: ${best} beats, led by ${streakNames}.`,
+            `${streakNames} put together the longest run: ${best} good or perfect beats.`,
+            `The streak counter topped out at ${best} for ${streakNames}.`,
+            `${streakNames} kept the successful beats flowing for a best of ${best}.`,
+            `Best run of good/perfect beats: ${best}, by ${streakNames}.`,
+            `${streakNames} owns the longest hit streak at ${best} beats.`,
+            `A ${best}-beat successful streak was the night's longest, led by ${streakNames}.`,
+            `The longest chain of successful beats reached ${best} for ${streakNames}.`,
+            `Streak stat: ${streakNames} reached ${best} consecutive good or perfect beats.`,
+            `${streakNames} posted the top streak: ${best} successful beats without a miss.`,
+            `The best hit run measured ${best} beats; ${streakNames} led the way.`,
+            `${streakNames} stretched a good/perfect run to ${best} beats.`,
+            `The rhythm streak record for this room is ${best}, shared by ${streakNames}.`,
+            `${streakNames} set the best consecutive-hit mark at ${best}.`,
+        ],
+        resultLines = [
+            `Your rounds counted ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, and ${totals.rest} rest beats.`,
+            `Your beat ledger: ${totals.perfect} perfect · ${totals.good} good · ${totals.miss} missed · ${totals.rest} rest.`,
+            `Across your rounds, ${totals.perfect} beats were perfect and ${totals.good} were good; ${totals.miss} were missed, with ${totals.rest} rests.`,
+            `Your tally came to ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, plus ${totals.rest} rests.`,
+            `Beat-by-beat: ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, and ${totals.rest} rests for you.`,
+            `The recap shows ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, and ${totals.rest} rest beats.`,
+            `Your scorecard has ${totals.perfect} perfect, ${totals.good} good, and ${totals.miss} missed beats; rests: ${totals.rest}.`,
+            `Your rounds add up to ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, and ${totals.rest} rest beats.`,
+            `The personal beat count: ${totals.perfect} perfect · ${totals.good} good · ${totals.miss} missed · ${totals.rest} rest.`,
+            `You recorded ${totals.perfect} perfects and ${totals.good} goods, alongside ${totals.miss} misses and ${totals.rest} rests.`,
+            `The stats say ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed beats, and ${totals.rest} rests for your run.`,
+            `Your night in numbers: ${totals.perfect} perfect, ${totals.good} good, ${totals.miss} missed, ${totals.rest} rest.`,
+            `Your beat report lists ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, and ${totals.rest} rests.`,
+            `Final count for your run: ${totals.perfect} perfect · ${totals.good} good · ${totals.miss} miss · ${totals.rest} rest.`,
+            `The rhythm recap tallies ${totals.perfect} perfects, ${totals.good} goods, ${totals.miss} misses, and ${totals.rest} rests.`,
+        ];
+    return [pick(winnerLines), pick(streakLines), pick(resultLines)];
+}
 function finish(state) {
   const list = state.players.slice().sort((a, b) => b.score - a.score);
   const tie = state.draw || (list.length > 1 && list[0].score === list[1].score);

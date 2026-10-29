@@ -1,3 +1,1070 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pulse Club</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2312141f'/%3E%3Ccircle cx='32' cy='32' r='23' fill='%23D94A36'/%3E%3Cpath d='M14 33h9l5-11 8 22 5-11h9' fill='none' stroke='%2312141f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"><style>
-body{margin:0;background:#12141f;color:#f8f7ff;font:16px "DM Sans",sans-serif;padding:22px}h1,h2,h3,.brand{font-family:"Darker Grotesque","DM Sans",sans-serif}button,input,textarea,select{font-family:"DM Sans",sans-serif}main{max-width:900px;margin:auto}.head{display:flex;justify-content:space-between;color:#D94A36}.audio-controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 18px;padding:8px 12px;border:1px solid #373a50;border-radius:10px;background:#1a1d2b;color:#dfe0e8;font-size:12px}.audio-controls legend{color:#D94A36;font-weight:bold;padding:0 5px}.audio-controls label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}.audio-controls input{accent-color:#D94A36}.audio-controls button{padding:7px 11px;background:#35394a;color:#fff;border:1px solid #565b70}.audio-controls button[aria-pressed="true"]{background:#ff6b78;color:#191a21;border-color:#ff6b78}.audio-status{color:#9ea2b5;font-size:11px;margin-left:auto}@media(max-width:600px){.audio-controls{gap:9px}.audio-status{width:100%;margin-left:0}}.brand{display:flex;align-items:center;gap:8px}.brand-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center}.brand-mark{width:26px;height:26px;display:block}.lobby-buttons{display:flex;gap:8px}.home-btn{background:#73dbff;color:#12141f}.actions .lobby-buttons button{min-width:108px}.hero{text-align:center;padding:28px 0 20px}.hero-beat{position:relative;width:58px;height:58px;margin:0 auto 12px}.hero-beat-ring{position:absolute;inset:5px;border:2px solid #D94A36;border-radius:50%;opacity:.5;animation:heroBeatShrink 1.6s cubic-bezier(.2,.7,.3,1) infinite;will-change:transform,opacity}.hero-beat-ring:nth-child(2){animation-delay:-.53s}.hero-beat-ring:nth-child(3){animation-delay:-1.06s}.hero-beat-core{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:#D94A36;transform:translate(-50%,-50%)}@keyframes heroBeatShrink{0%{transform:scale(1.6);opacity:.85}100%{transform:scale(.08);opacity:0}}@keyframes heroBeatBreathe{from{opacity:.2}to{opacity:.62}}@media(prefers-reduced-motion:reduce){.hero-beat-ring{animation:heroBeatBreathe 2.6s ease-in-out infinite alternate;transform:scale(.84);opacity:.4;will-change:opacity}}.hero h1{font-size:clamp(44px,9vw,75px);line-height:1}.hero em{color:#D94A36}.muted{color:#a4a6b7}.cards,.lgrid,.layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card,.box,.arena,.scores,.recap{background:#1d2030;border:1px solid #373a50;border-radius:15px;padding:20px}.field-label{display:block;color:#bfc1cf;font-size:12px;margin:6px 0 2px}.field{width:100%;height:44px;background:#11131d;border:1px solid #474b60;border-radius:8px;color:white;padding:0 10px;margin:4px 0;box-sizing:border-box}button{cursor:pointer;border:0;border-radius:8px;background:#D94A36;color:#08090c;font-weight:bold;padding:13px 16px}.full{width:100%}.join{display:flex;gap:7px}.join input{flex:1}.error{color:#ff8ab7;font-size:12px;min-height:20px}.rules{display:flex;justify-content:space-around;color:#abb;padding:24px}.screen{display:none}.screen.active{display:block}.lhead,.lgrid,.actions,.match,.end{max-width:830px;margin:auto}.lhead{display:flex;justify-content:space-between;align-items:end}.code{background:#1d2030;border:1px solid #474b60;border-radius:9px;padding:10px;text-align:center;cursor:pointer}.code small{display:block;color:#abb;font-size:10px}.code strong{font:22px "DM Sans",sans-serif;letter-spacing:4px;color:#D94A36}.lgrid{grid-template-columns:1.3fr .7fr}.roster{display:grid;grid-template-columns:1fr 1fr;gap:8px}.player,.empty{padding:10px;background:#272a3c;border-radius:8px;font-size:13px}.ready-mark{color:#68edbd;font-size:10px;margin-left:5px}.avatar{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:8px;background:#35394a;margin-right:6px;font-weight:bold}.empty{text-align:center;border:1px dashed #555;color:#999}.box ol{font-size:13px;color:#bbc;line-height:1.7;padding-left:20px}.actions{display:flex;justify-content:space-between;align-items:center;margin:15px auto;color:#aab}.layout{grid-template-columns:1fr 250px}.arena{height:420px;display:flex;flex-direction:column;position:relative}.bar{display:flex;justify-content:space-between;color:#abb;font:12px "DM Sans",sans-serif}.bar #gameStatus{display:none}.bar b{color:#D94A36}.cue{flex:1;display:grid;place-items:center;color:#D94A36;font-size:95px;position:relative;overflow:visible}.cue .symbol{position:relative;z-index:2;transition:color .12s,transform .12s,text-shadow .12s}.cue.next .symbol{transform:scale(1.05)}.cue.onbeat .symbol{color:#fff;text-shadow:0 0 36px #fff;transform:scale(1.12)}.cue.hit .symbol{color:#68edbd;text-shadow:0 0 35px #68edbd;transform:scale(1.08)}.cue.miss .symbol{color:#ff5368;text-shadow:0 0 35px #ff5368;transform:scale(.96)}#cueRing{position:absolute;left:50%;top:50%;width:80px;height:80px;border:2px solid #73dbff;border-radius:50%;box-sizing:border-box;transform:translate(-50%,-50%) scale(3);opacity:0;z-index:1;pointer-events:none}.cue.approach #cueRing{opacity:1;animation:ringClosing var(--ring-ms,250ms) cubic-bezier(.2,.7,.3,1) forwards}.cue.onbeat #cueRing{border-color:#fff;box-shadow:0 0 20px #fff}.cue.hit #cueRing{border-color:#68edbd}.cue.miss #cueRing{border-color:#ff5368}@keyframes ringClosing{0%{transform:translate(-50%,-50%) scale(3);opacity:.2}12%{opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}.tap{height:62px;font-size:18px}.feedback{text-align:center;height:30px;padding:8px;color:#abb;font:12px "DM Sans",sans-serif}.dots{display:flex;justify-content:center;gap:8px}.dots i{width:15px;height:15px;background:#484b5c;border-radius:50%;transition:background .15s,box-shadow .15s,outline .15s;position:relative}.dots i:after{content:attr(data-mark);position:absolute;inset:0;display:grid;place-items:center;font:bold 10px "DM Sans",sans-serif;color:#151720}.dots i.rest:after{color:#f8f7ff}.dots i.now{outline:2px solid #f8f7ff;outline-offset:3px}.dots i.perfect{background:#68edbd;box-shadow:0 0 9px #68edbd}.dots i.good{background:#73dbff;box-shadow:0 0 9px #73dbff}.dots i.miss{background:#ff5368;box-shadow:0 0 9px #ff5368}.legend{text-align:center;margin-top:12px}.legend span{font-size:10px;color:#abb;margin-right:10px}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}.legend .perfect{background:#68edbd}.legend .good{background:#73dbff}.legend .miss{background:#ff5368}.legend .rest{background:#55596a}.count{display:none;position:fixed;inset:0;z-index:999;background:rgba(15,17,28,.84);backdrop-filter:grayscale(1) brightness(.28) blur(2px);place-items:center;text-align:center;font-size:clamp(100px,22vw,160px);color:#D94A36}.count.show{display:grid}.count small{display:none}.scores{height:max-content}.row{display:flex;justify-content:space-between;border-top:1px solid #34384c;padding:8px 0;font-size:12px}.row span:last-child{font:11px "DM Sans",sans-serif;color:#D94A36}.podium{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));align-items:end;gap:10px;margin:22px 0}.pod{--accent:#ffd166;min-width:0;height:125px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:#302c24;border:1px solid #695b37;border-radius:10px;padding:13px 5px}.pod.first{--accent:#ffd166;background:#302c24;border-color:#8c7435}.pod.second{--accent:#73dbff;background:#202d38;border-color:#3a667a}.pod.third{--accent:#ff8cc8;background:#332532;border-color:#71465f}.pod.first{height:165px}.pod.second{height:125px}.pod.third{height:95px}.pod .rank-label{font:10px "DM Sans",sans-serif;color:var(--accent);letter-spacing:.08em}.pod .tie-label{font:10px "DM Sans",sans-serif;color:#f8f7ff;margin-top:3px}.pod b{overflow-wrap:anywhere}.pod b,.pod em{display:block}.pod b{color:var(--accent);margin:7px 0 4px}.pod em{font:10px "DM Sans",sans-serif;color:var(--accent);font-style:normal}.score-summary{background:#1d2030;border:1px solid #373a50;border-radius:15px;padding:18px;margin:18px auto 0}.summary-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.summary-head h2{font-size:17px;margin:0 0 5px}.summary-head p{font-size:11px;color:#a4a6b7;margin:0}.round-history{display:grid;gap:7px}.history-round{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:10px;border-top:1px solid #34384c;padding:8px 0}.history-label{font:10px "DM Sans",sans-serif;color:#adb0c2}.history-dots{display:grid;grid-template-columns:repeat(12,minmax(9px,1fr));gap:6px;align-items:center}.history-dot{aspect-ratio:1;border-radius:50%;background:#4b4e5d;min-width:7px;position:relative}.history-dot:after{content:attr(data-mark);position:absolute;inset:0;display:grid;place-items:center;color:#141622;font:bold 8px "DM Sans",sans-serif}.history-dot.rest:after{color:#f8f7ff}.history-dot.perfect{background:#68edbd;box-shadow:0 0 7px #68edbd70}.history-dot.good{background:#73dbff;box-shadow:0 0 7px #73dbff70}.history-dot.miss{background:#ff5368;box-shadow:0 0 7px #ff536870}.history-dot.rest{background:#55596a;border:1px solid #85899a}.history-key{font-size:11px;color:#b8bac8;margin-top:10px;line-height:1.6}.end-actions{display:flex;justify-content:center;gap:10px;margin:22px auto}.end-actions button{min-width:180px}.end-actions .secondary{background:#292c3e;color:#f8f7ff;border:1px solid #55596e}.share-label{display:block;margin:15px 0 6px;color:#aeb0c0;font:10px "DM Sans",sans-serif;letter-spacing:.08em}.share-preview{display:block;box-sizing:border-box;width:100%;min-height:135px;overflow:hidden;resize:none;padding:12px;background:#11131d;color:#f4f3ed;border:1px solid #474b60;border-radius:9px;font:12px/1.65 "DM Sans",sans-serif;white-space:pre-wrap;user-select:text}.result-totals{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.result-total{background:#252839;border:1px solid #34384c;border-radius:9px;padding:10px;text-align:center}.result-total b{display:block;font:18px "DM Sans",sans-serif;margin-bottom:4px}.result-total span{font-size:10px;color:#aeb0c0}.result-total.perfect b{color:#68edbd}.result-total.good b{color:#73dbff}.result-total.miss b{color:#ff5368}@media(max-width:650px){.score-summary{padding:14px}.summary-head h2{font-size:15px}.history-round{grid-template-columns:62px 1fr;gap:7px}.history-dots{gap:4px}.result-totals{gap:6px}.result-total{padding:8px 4px}}.full-rank,.recap{background:#1d2030;border:1px solid #373a50;border-radius:15px;padding:18px;margin:18px auto 0}.full-rank h3,.recap h3{margin:0 0 10px}.recap{margin-top:18px}.line{padding:8px;border-top:1px solid #383b4c}.toast{display:none;position:fixed;bottom:20px;left:45%;background:#35384b;padding:12px;border-radius:8px}.toast.show{display:block}@media(max-width:650px){.cards,.lgrid,.layout{grid-template-columns:1fr}.rules{font-size:11px;padding:18px 0}.actions{align-items:stretch;flex-direction:column;gap:10px}.arena{height:400px}.end-actions{flex-direction:column}.end-actions button{width:100%}}
-</style></head><body><main><header class="head"><a class="brand-link" href="#" id="brandHome" aria-label="Pulse Club home"><b class="brand"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#D94A36"/><path d="M9 33h13l7-15 9 30 7-15h10" fill="none" stroke="#12141f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>PULSE CLUB</b></a><span>● RHYTHM SHOWDOWN</span></header><fieldset class="audio-controls" aria-label="Audio controls"><legend>Audio</legend><label><input id="beatSoundToggle" type="checkbox" checked> Beat sounds</label><label><input id="effectSoundToggle" type="checkbox" checked> Sound effects</label><button type="button" id="audioMute" aria-pressed="false">Mute all</button><span id="audioStatus" class="audio-status" role="status" aria-live="polite">Optional synthesized sounds</span></fieldset><section id="home" class="screen active"><div class="hero"><div class="hero-beat" aria-hidden="true"><span class="hero-beat-ring"></span><span class="hero-beat-ring"></span><span class="hero-beat-ring"></span><span class="hero-beat-core"></span></div><small style="color:#D94A36">✳ EVERY BEAT COUNTS</small><h1>Feel the beat.<br><em>Own the room.</em></h1><p class="muted">A fast, chaotic rhythm party game. No music skills needed.</p><p class="muted">Read the pattern, catch the beat, and keep your streak alive. Up to 8 players.</p></div><div class="cards"><div class="card"><h2>Start a room</h2><p class="muted">Host the match and invite your crew.</p><label class="field-label" for="hostName">Your name</label><input class="field" id="hostName" value="" placeholder="Player" maxlength="16"><button class="full" id="createBtn">Create room</button><div class="error" id="hostError"></div></div><div class="card"><h2>Join the party</h2><p class="muted">Enter your friend’s room code.</p><label class="field-label" for="joinName">Your name</label><input class="field" id="joinName" value="" placeholder="Player" maxlength="16"><div class="join"><input class="field" id="joinCode" placeholder="ROOM CODE" maxlength="6"><button id="joinBtn">Join</button></div><div class="error" id="joinError"></div></div></div><div class="rules"><span>⏱ <b>Five rising rounds</b></span><span>✦ <b>Streak bonuses</b></span><span>☺ <b>No knockouts</b></span></div></section><section id="lobby" class="screen"><div class="lhead"><div><small style="color:#D94A36">THE CREW IS ASSEMBLING</small><h1>Room lobby</h1></div><div class="code" id="copyCode"><small>ROOM CODE · TAP TO COPY</small><strong id="roomCode">------</strong></div></div><div class="lgrid"><div class="box"><h3>On the dance floor · <span id="playerCount"></span></h3><div class="roster" id="lobbyRoster"></div></div><div class="box"><h3>Quick rundown</h3><ol><li>Join on your own device.</li><li>Tap along. Later rounds add doubles and rests.</li><li>Perfect +100 · Good +60 · Miss −10 · every five successful beats +25.</li><li>Miss all 54 scored beats: −540 points. Rests are unscored.</li><li>All five rounds count. Highest score wins.</li></ol></div></div><div class="actions"><span id="lobbyHint">Waiting for another player…</span><div class="lobby-buttons"><button id="startBtn" disabled>Start match →</button><button class="home-btn" id="lobbyHomeBtn">Home</button></div></div></section><section id="game" class="screen"><div class="match"><div class="bar">ROUND <b id="roundNum">1</b> / 5 <span id="roundTime">GET READY</span></div><div class="layout"><div class="arena"><div class="bar"><span id="gameStatus">Ready</span><span id="beatCount">— / 12</span></div><div class="cue" id="cue"><i id="cueRing" aria-hidden="true"></i><span class="symbol" id="cueSymbol">♪</span></div><div class="count" id="countdown"><div id="countNum">3<small id="countCaption">GET READY</small></div></div><button class="tap" id="tapBtn" disabled>GET READY</button><div class="feedback" id="feedback">Tap when the outline meets the center beat.</div><div class="dots" id="beatTrack"></div><div class="legend"><span><i class="perfect"></i>Perfect</span><span><i class="good"></i>Good</span><span><i class="miss"></i>Miss</span><span><i class="rest"></i>Rest</span></div></div><aside class="scores"><h3>Scoreboard · Live</h3><p class="muted" style="font-size:11px">Streak = consecutive successful beats. Rest beats pause it.</p><div id="scoreRows"></div></aside></div></div></section><section id="end" class="screen"><div class="end"><div style="text-align:center"><div style="font-size:52px">🏆</div><small>THAT’S A WRAP</small><h1 id="endTitle"></h1><p id="endSubtitle" class="muted"></p></div><div id="podium" class="podium"></div><section class="score-summary"><div class="summary-head"><div><h2>Your round results</h2><p>Each round shows every beat in order.</p></div></div><label class="share-label" for="sharePreview">COPY RESULTS</label><textarea id="sharePreview" class="share-preview" rows="12" readonly></textarea><div class="history-key">✓ Perfect · • Good · ✕ Miss · — Rest<br>Perfect +100 · Good +60 · Miss −10 · every 5 successful beats +25<br>Miss all 54 scored beats: −540 points. Rest beats don’t count toward your score.</div></section><section class="full-rank"><h3>FULL RANKING <small style="font-size:11px;color:#a4a6b7">· Best hit streak counts consecutive successful beats; Rest beats pause it</small></h3><div id="finalScores"></div></section><div class="recap"><h3>THE POST-GAME TEA ☕</h3><div id="recapLines"></div></div><div class="end-actions"><button class="primary" id="playAgainBtn">Play Again</button></div></div></section></main><div id="toast" class="toast"></div><script src="game.js" defer></script></body></html>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Pulse Club</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2312141f'/%3E%3Ccircle cx='32' cy='32' r='23' fill='%23D94A36'/%3E%3Cpath d='M14 33h9l5-11 8 22 5-11h9' fill='none' stroke='%2312141f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+        />
+        <style>
+            body {
+                margin: 0;
+                background: #12141f;
+                color: #f8f7ff;
+                font:
+                    16px "DM Sans",
+                    sans-serif;
+                padding: 22px;
+            }
+            h1,
+            h2,
+            h3,
+            .brand {
+                font-family: "Darker Grotesque", "DM Sans", sans-serif;
+            }
+            button,
+            input,
+            textarea,
+            select {
+                font-family: "DM Sans", sans-serif;
+            }
+            main {
+                max-width: 900px;
+                margin: auto;
+            }
+            .head {
+                display: flex;
+                justify-content: space-between;
+                color: #d94a36;
+            }
+            .audio-controls {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                flex-wrap: wrap;
+                margin: 12px 0 18px;
+                padding: 8px 12px;
+                border: 1px solid #373a50;
+                border-radius: 10px;
+                background: #1a1d2b;
+                color: #dfe0e8;
+                font-size: 12px;
+            }
+            .audio-controls legend {
+                color: #d94a36;
+                font-weight: bold;
+                padding: 0 5px;
+            }
+            .audio-controls label {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                cursor: pointer;
+            }
+            .audio-controls input {
+                accent-color: #d94a36;
+            }
+            .audio-controls button {
+                padding: 7px 11px;
+                background: #35394a;
+                color: #fff;
+                border: 1px solid #565b70;
+            }
+            .audio-controls button[aria-pressed="true"] {
+                background: #ff6b78;
+                color: #191a21;
+                border-color: #ff6b78;
+            }
+            .audio-status {
+                color: #9ea2b5;
+                font-size: 11px;
+                margin-left: auto;
+            }
+            @media (max-width: 600px) {
+                .audio-controls {
+                    gap: 9px;
+                }
+                .audio-status {
+                    width: 100%;
+                    margin-left: 0;
+                }
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .brand-link {
+                color: inherit;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+            }
+            .brand-mark {
+                width: 26px;
+                height: 26px;
+                display: block;
+            }
+            .lobby-buttons {
+                display: flex;
+                gap: 8px;
+            }
+            .home-btn {
+                background: #73dbff;
+                color: #12141f;
+            }
+            .actions .lobby-buttons button {
+                min-width: 108px;
+            }
+            .hero {
+                text-align: center;
+                padding: 28px 0 20px;
+            }
+            .hero-beat {
+                position: relative;
+                width: 58px;
+                height: 58px;
+                margin: 0 auto 12px;
+            }
+            .hero-beat-ring {
+                position: absolute;
+                inset: 5px;
+                border: 2px solid #d94a36;
+                border-radius: 50%;
+                opacity: 0.5;
+                animation: heroBeatShrink 1.6s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+                will-change: transform, opacity;
+            }
+            .hero-beat-ring:nth-child(2) {
+                animation-delay: -0.53s;
+            }
+            .hero-beat-ring:nth-child(3) {
+                animation-delay: -1.06s;
+            }
+            .hero-beat-core {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                background: #d94a36;
+                transform: translate(-50%, -50%);
+            }
+            @keyframes heroBeatShrink {
+                0% {
+                    transform: scale(1.6);
+                    opacity: 0.85;
+                }
+                100% {
+                    transform: scale(0.08);
+                    opacity: 0;
+                }
+            }
+            @keyframes heroBeatBreathe {
+                from {
+                    opacity: 0.2;
+                }
+                to {
+                    opacity: 0.62;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .hero-beat-ring {
+                    animation: heroBeatBreathe 2.6s ease-in-out infinite alternate;
+                    transform: scale(0.84);
+                    opacity: 0.4;
+                    will-change: opacity;
+                }
+            }
+            .hero h1 {
+                font-size: clamp(44px, 9vw, 75px);
+                line-height: 1;
+            }
+            .hero em {
+                color: #d94a36;
+            }
+            .muted {
+                color: #a4a6b7;
+            }
+            .cards,
+            .lgrid,
+            .layout {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+            .card,
+            .box,
+            .arena,
+            .scores,
+            .recap {
+                background: #1d2030;
+                border: 1px solid #373a50;
+                border-radius: 15px;
+                padding: 20px;
+            }
+            .field-label {
+                display: block;
+                color: #bfc1cf;
+                font-size: 12px;
+                margin: 6px 0 2px;
+            }
+            .field {
+                width: 100%;
+                height: 44px;
+                background: #11131d;
+                border: 1px solid #474b60;
+                border-radius: 8px;
+                color: white;
+                padding: 0 10px;
+                margin: 4px 0;
+                box-sizing: border-box;
+            }
+            button {
+                cursor: pointer;
+                border: 0;
+                border-radius: 8px;
+                background: #d94a36;
+                color: #08090c;
+                font-weight: bold;
+                padding: 13px 16px;
+            }
+            .full {
+                width: 100%;
+            }
+            .join {
+                display: flex;
+                gap: 7px;
+            }
+            .join input {
+                flex: 1;
+            }
+            .error {
+                color: #ff8ab7;
+                font-size: 12px;
+                min-height: 20px;
+            }
+            .rules {
+                display: flex;
+                justify-content: space-around;
+                color: #abb;
+                padding: 24px;
+            }
+            .screen {
+                display: none;
+            }
+            .screen.active {
+                display: block;
+            }
+            .lhead,
+            .lgrid,
+            .actions,
+            .match,
+            .end {
+                max-width: 830px;
+                margin: auto;
+            }
+            .lhead {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+            }
+            .code {
+                background: #1d2030;
+                border: 1px solid #474b60;
+                border-radius: 9px;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .code small {
+                display: block;
+                color: #abb;
+                font-size: 10px;
+            }
+            .code strong {
+                font:
+                    22px "DM Sans",
+                    sans-serif;
+                letter-spacing: 4px;
+                color: #d94a36;
+            }
+            .lgrid {
+                grid-template-columns: 1.3fr 0.7fr;
+            }
+            .roster {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .player,
+            .empty {
+                padding: 10px;
+                background: #272a3c;
+                border-radius: 8px;
+                font-size: 13px;
+            }
+            .ready-mark {
+                color: #68edbd;
+                font-size: 10px;
+                margin-left: 5px;
+            }
+            .avatar {
+                display: inline-grid;
+                place-items: center;
+                width: 27px;
+                height: 27px;
+                border-radius: 8px;
+                background: #35394a;
+                margin-right: 6px;
+                font-weight: bold;
+            }
+            .empty {
+                text-align: center;
+                border: 1px dashed #555;
+                color: #999;
+            }
+            .box ol {
+                font-size: 13px;
+                color: #bbc;
+                line-height: 1.7;
+                padding-left: 20px;
+            }
+            .actions {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 15px auto;
+                color: #aab;
+            }
+            .layout {
+                grid-template-columns: 1fr 250px;
+            }
+            .arena {
+                height: 420px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            }
+            .bar {
+                display: flex;
+                justify-content: space-between;
+                color: #abb;
+                font:
+                    12px "DM Sans",
+                    sans-serif;
+            }
+            .bar #gameStatus {
+                display: none;
+            }
+            .bar b {
+                color: #d94a36;
+            }
+            .cue {
+                flex: 1;
+                display: grid;
+                place-items: center;
+                color: #d94a36;
+                font-size: 95px;
+                position: relative;
+                overflow: visible;
+            }
+            .cue .symbol {
+                position: relative;
+                z-index: 2;
+                transition:
+                    color 0.12s,
+                    transform 0.12s,
+                    text-shadow 0.12s;
+            }
+            .cue.next .symbol {
+                transform: scale(1.05);
+            }
+            .cue.onbeat .symbol {
+                color: #fff;
+                text-shadow: 0 0 36px #fff;
+                transform: scale(1.12);
+            }
+            .cue.hit .symbol {
+                color: #68edbd;
+                text-shadow: 0 0 35px #68edbd;
+                transform: scale(1.08);
+            }
+            .cue.miss .symbol {
+                color: #ff5368;
+                text-shadow: 0 0 35px #ff5368;
+                transform: scale(0.96);
+            }
+            #cueRing {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 80px;
+                height: 80px;
+                border: 2px solid #73dbff;
+                border-radius: 50%;
+                box-sizing: border-box;
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+                z-index: 1;
+                pointer-events: none;
+            }
+            .cue.approach #cueRing {
+                opacity: 1;
+                animation: ringClosing var(--ring-ms, 250ms) cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+            }
+            .cue.onbeat #cueRing {
+                border-color: #fff;
+                box-shadow: 0 0 20px #fff;
+            }
+            .cue.hit #cueRing {
+                border-color: #68edbd;
+            }
+            .cue.miss #cueRing {
+                border-color: #ff5368;
+            }
+            @keyframes ringClosing {
+                0% {
+                    transform: translate(-50%, -50%) scale(3);
+                    opacity: 0.2;
+                }
+                12% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                }
+            }
+            .tap {
+                height: 62px;
+                font-size: 18px;
+            }
+            .feedback {
+                text-align: center;
+                height: 30px;
+                padding: 8px;
+                color: #abb;
+                font:
+                    12px "DM Sans",
+                    sans-serif;
+            }
+            .dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+            }
+            .dots i {
+                width: 15px;
+                height: 15px;
+                background: #484b5c;
+                border-radius: 50%;
+                transition:
+                    background 0.15s,
+                    box-shadow 0.15s,
+                    outline 0.15s;
+                position: relative;
+            }
+            .dots i:after {
+                content: attr(data-mark);
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                font:
+                    bold 10px "DM Sans",
+                    sans-serif;
+                color: #151720;
+            }
+            .dots i.rest:after {
+                color: #f8f7ff;
+            }
+            .dots i.now {
+                outline: 2px solid #f8f7ff;
+                outline-offset: 3px;
+            }
+            .dots i.perfect {
+                background: #68edbd;
+                box-shadow: 0 0 9px #68edbd;
+            }
+            .dots i.good {
+                background: #73dbff;
+                box-shadow: 0 0 9px #73dbff;
+            }
+            .dots i.miss {
+                background: #ff5368;
+                box-shadow: 0 0 9px #ff5368;
+            }
+            .legend {
+                text-align: center;
+                margin-top: 12px;
+            }
+            .legend span {
+                font-size: 10px;
+                color: #abb;
+                margin-right: 10px;
+            }
+            .legend i {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                margin-right: 4px;
+            }
+            .legend .perfect {
+                background: #68edbd;
+            }
+            .legend .good {
+                background: #73dbff;
+            }
+            .legend .miss {
+                background: #ff5368;
+            }
+            .legend .rest {
+                background: #55596a;
+            }
+            .count {
+                display: none;
+                position: fixed;
+                inset: 0;
+                z-index: 999;
+                background: rgba(15, 17, 28, 0.84);
+                backdrop-filter: grayscale(1) brightness(0.28) blur(2px);
+                place-items: center;
+                text-align: center;
+                font-size: clamp(100px, 22vw, 160px);
+                color: #d94a36;
+            }
+            .count.show {
+                display: grid;
+            }
+            .count small {
+                display: none;
+            }
+            .scores {
+                height: max-content;
+            }
+            .row {
+                display: flex;
+                justify-content: space-between;
+                border-top: 1px solid #34384c;
+                padding: 8px 0;
+                font-size: 12px;
+            }
+            .row span:last-child {
+                font:
+                    11px "DM Sans",
+                    sans-serif;
+                color: #d94a36;
+            }
+            .podium {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                align-items: end;
+                gap: 10px;
+                margin: 22px 0;
+            }
+            .pod {
+                --accent: #ffd166;
+                min-width: 0;
+                height: 125px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                background: #302c24;
+                border: 1px solid #695b37;
+                border-radius: 10px;
+                padding: 13px 5px;
+            }
+            .pod.first {
+                --accent: #ffd166;
+                background: #302c24;
+                border-color: #8c7435;
+            }
+            .pod.second {
+                --accent: #73dbff;
+                background: #202d38;
+                border-color: #3a667a;
+            }
+            .pod.third {
+                --accent: #ff8cc8;
+                background: #332532;
+                border-color: #71465f;
+            }
+            .pod.first {
+                height: 165px;
+            }
+            .pod.second {
+                height: 125px;
+            }
+            .pod.third {
+                height: 95px;
+            }
+            .pod .rank-label {
+                font:
+                    10px "DM Sans",
+                    sans-serif;
+                color: var(--accent);
+                letter-spacing: 0.08em;
+            }
+            .pod .tie-label {
+                font:
+                    10px "DM Sans",
+                    sans-serif;
+                color: #f8f7ff;
+                margin-top: 3px;
+            }
+            .pod b {
+                overflow-wrap: anywhere;
+            }
+            .pod b,
+            .pod em {
+                display: block;
+            }
+            .pod b {
+                color: var(--accent);
+                margin: 7px 0 4px;
+            }
+            .pod em {
+                font:
+                    10px "DM Sans",
+                    sans-serif;
+                color: var(--accent);
+                font-style: normal;
+            }
+            .score-summary {
+                background: #1d2030;
+                border: 1px solid #373a50;
+                border-radius: 15px;
+                padding: 18px;
+                margin: 18px auto 0;
+            }
+            .summary-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                margin-bottom: 12px;
+            }
+            .summary-head h2 {
+                font-size: 17px;
+                margin: 0 0 5px;
+            }
+            .summary-head p {
+                font-size: 11px;
+                color: #a4a6b7;
+                margin: 0;
+            }
+            .round-history {
+                display: grid;
+                gap: 7px;
+            }
+            .history-round {
+                display: grid;
+                grid-template-columns: 76px 1fr;
+                align-items: center;
+                gap: 10px;
+                border-top: 1px solid #34384c;
+                padding: 8px 0;
+            }
+            .history-label {
+                font:
+                    10px "DM Sans",
+                    sans-serif;
+                color: #adb0c2;
+            }
+            .history-dots {
+                display: grid;
+                grid-template-columns: repeat(12, minmax(9px, 1fr));
+                gap: 6px;
+                align-items: center;
+            }
+            .history-dot {
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background: #4b4e5d;
+                min-width: 7px;
+                position: relative;
+            }
+            .history-dot:after {
+                content: attr(data-mark);
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                color: #141622;
+                font:
+                    bold 8px "DM Sans",
+                    sans-serif;
+            }
+            .history-dot.rest:after {
+                color: #f8f7ff;
+            }
+            .history-dot.perfect {
+                background: #68edbd;
+                box-shadow: 0 0 7px #68edbd70;
+            }
+            .history-dot.good {
+                background: #73dbff;
+                box-shadow: 0 0 7px #73dbff70;
+            }
+            .history-dot.miss {
+                background: #ff5368;
+                box-shadow: 0 0 7px #ff536870;
+            }
+            .history-dot.rest {
+                background: #55596a;
+                border: 1px solid #85899a;
+            }
+            .history-key {
+                font-size: 11px;
+                color: #b8bac8;
+                margin-top: 10px;
+                line-height: 1.6;
+            }
+            .end-actions {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 22px auto;
+            }
+            .end-actions button {
+                min-width: 180px;
+            }
+            .end-actions .secondary {
+                background: #292c3e;
+                color: #f8f7ff;
+                border: 1px solid #55596e;
+            }
+            .share-label {
+                display: block;
+                margin: 15px 0 6px;
+                color: #aeb0c0;
+                font:
+                    10px "DM Sans",
+                    sans-serif;
+                letter-spacing: 0.08em;
+            }
+            .share-preview {
+                display: block;
+                box-sizing: border-box;
+                width: 100%;
+                min-height: 135px;
+                overflow: hidden;
+                resize: none;
+                padding: 12px;
+                background: #11131d;
+                color: #f4f3ed;
+                border: 1px solid #474b60;
+                border-radius: 9px;
+                font:
+                    12px/1.65 "DM Sans",
+                    sans-serif;
+                white-space: pre-wrap;
+                user-select: text;
+            }
+            .result-totals {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 9px;
+                margin-top: 14px;
+            }
+            .result-total {
+                background: #252839;
+                border: 1px solid #34384c;
+                border-radius: 9px;
+                padding: 10px;
+                text-align: center;
+            }
+            .result-total b {
+                display: block;
+                font:
+                    18px "DM Sans",
+                    sans-serif;
+                margin-bottom: 4px;
+            }
+            .result-total span {
+                font-size: 10px;
+                color: #aeb0c0;
+            }
+            .result-total.perfect b {
+                color: #68edbd;
+            }
+            .result-total.good b {
+                color: #73dbff;
+            }
+            .result-total.miss b {
+                color: #ff5368;
+            }
+            @media (max-width: 650px) {
+                .score-summary {
+                    padding: 14px;
+                }
+                .summary-head h2 {
+                    font-size: 15px;
+                }
+                .history-round {
+                    grid-template-columns: 62px 1fr;
+                    gap: 7px;
+                }
+                .history-dots {
+                    gap: 4px;
+                }
+                .result-totals {
+                    gap: 6px;
+                }
+                .result-total {
+                    padding: 8px 4px;
+                }
+            }
+            .full-rank,
+            .recap {
+                background: #1d2030;
+                border: 1px solid #373a50;
+                border-radius: 15px;
+                padding: 18px;
+                margin: 18px auto 0;
+            }
+            .full-rank h3,
+            .recap h3 {
+                margin: 0 0 10px;
+            }
+            .recap {
+                margin-top: 18px;
+            }
+            .line {
+                padding: 8px;
+                border-top: 1px solid #383b4c;
+            }
+            .toast {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                left: 45%;
+                background: #35384b;
+                padding: 12px;
+                border-radius: 8px;
+            }
+            .toast.show {
+                display: block;
+            }
+            @media (max-width: 650px) {
+                .cards,
+                .lgrid,
+                .layout {
+                    grid-template-columns: 1fr;
+                }
+                .rules {
+                    font-size: 11px;
+                    padding: 18px 0;
+                }
+                .actions {
+                    align-items: stretch;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                .arena {
+                    height: 400px;
+                }
+                .end-actions {
+                    flex-direction: column;
+                }
+                .end-actions button {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <header class="head">
+                <a class="brand-link" href="#" id="brandHome" aria-label="Pulse Club home"
+                    ><b class="brand"
+                        ><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+                            <circle cx="32" cy="32" r="29" fill="#D94A36" />
+                            <path
+                                d="M9 33h13l7-15 9 30 7-15h10"
+                                fill="none"
+                                stroke="#12141f"
+                                stroke-width="5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            /></svg
+                        >PULSE CLUB</b
+                    ></a
+                ><span>● RHYTHM SHOWDOWN</span>
+            </header>
+            <fieldset class="audio-controls" aria-label="Audio controls">
+                <legend>Audio</legend>
+                <label><input id="beatSoundToggle" type="checkbox" checked /> Beat sounds</label
+                ><label><input id="effectSoundToggle" type="checkbox" checked /> Sound effects</label
+                ><button type="button" id="audioMute" aria-pressed="false">Mute all</button
+                ><span id="audioStatus" class="audio-status" role="status" aria-live="polite"
+                    >Optional synthesized sounds</span
+                >
+            </fieldset>
+            <section id="home" class="screen active">
+                <div class="hero">
+                    <div class="hero-beat" aria-hidden="true">
+                        <span class="hero-beat-ring"></span><span class="hero-beat-ring"></span
+                        ><span class="hero-beat-ring"></span><span class="hero-beat-core"></span>
+                    </div>
+                    <small style="color: #d94a36">✳ EVERY BEAT COUNTS</small>
+                    <h1>Feel the beat.<br /><em>Own the room.</em></h1>
+                    <p class="muted">A fast, chaotic rhythm party game. No music skills needed.</p>
+                    <p class="muted">Read the pattern, catch the beat, and keep your streak alive. Up to 8 players.</p>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <h2>Start a room</h2>
+                        <p class="muted">Host the match and invite your crew.</p>
+                        <label class="field-label" for="hostName">Your name</label
+                        ><input class="field" id="hostName" value="" placeholder="Player" maxlength="16" /><button
+                            class="full"
+                            id="createBtn"
+                        >
+                            Create room
+                        </button>
+                        <div class="error" id="hostError"></div>
+                    </div>
+                    <div class="card">
+                        <h2>Join the party</h2>
+                        <p class="muted">Enter your friend’s room code.</p>
+                        <label class="field-label" for="joinName">Your name</label
+                        ><input class="field" id="joinName" value="" placeholder="Player" maxlength="16" />
+                        <div class="join">
+                            <input class="field" id="joinCode" placeholder="ROOM CODE" maxlength="6" /><button
+                                id="joinBtn"
+                            >
+                                Join
+                            </button>
+                        </div>
+                        <div class="error" id="joinError"></div>
+                    </div>
+                </div>
+                <div class="rules">
+                    <span>⏱ <b>Five rising rounds</b></span
+                    ><span>✦ <b>Streak bonuses</b></span
+                    ><span>☺ <b>No knockouts</b></span>
+                </div>
+            </section>
+            <section id="lobby" class="screen">
+                <div class="lhead">
+                    <div>
+                        <small style="color: #d94a36">THE CREW IS ASSEMBLING</small>
+                        <h1>Room lobby</h1>
+                    </div>
+                    <div class="code" id="copyCode">
+                        <small>ROOM CODE · TAP TO COPY</small><strong id="roomCode">------</strong>
+                    </div>
+                </div>
+                <div class="lgrid">
+                    <div class="box">
+                        <h3>On the dance floor · <span id="playerCount"></span></h3>
+                        <div class="roster" id="lobbyRoster"></div>
+                    </div>
+                    <div class="box">
+                        <h3>Quick rundown</h3>
+                        <ol>
+                            <li>Join on your own device.</li>
+                            <li>Tap along. Later rounds add doubles and rests.</li>
+                            <li>Perfect +100 · Good +60 · Miss −10 · every five successful beats +25.</li>
+                            <li>Miss all 54 scored beats: −540 points. Rests are unscored.</li>
+                            <li>All five rounds count. Highest score wins.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="actions">
+                    <span id="lobbyHint">Waiting for another player…</span>
+                    <div class="lobby-buttons">
+                        <button id="startBtn" disabled>Start match →</button
+                        ><button class="home-btn" id="lobbyHomeBtn">Home</button>
+                    </div>
+                </div>
+            </section>
+            <section id="game" class="screen">
+                <div class="match">
+                    <div class="bar">ROUND <b id="roundNum">1</b> / 5 <span id="roundTime">GET READY</span></div>
+                    <div class="layout">
+                        <div class="arena">
+                            <div class="bar"><span id="gameStatus">Ready</span><span id="beatCount">— / 12</span></div>
+                            <div class="cue" id="cue">
+                                <i id="cueRing" aria-hidden="true"></i><span class="symbol" id="cueSymbol">♪</span>
+                            </div>
+                            <div class="count" id="countdown">
+                                <div id="countNum">3<small id="countCaption">GET READY</small></div>
+                            </div>
+                            <button class="tap" id="tapBtn" disabled>GET READY</button>
+                            <div class="feedback" id="feedback">Tap when the outline meets the center beat.</div>
+                            <div class="dots" id="beatTrack"></div>
+                            <div class="legend">
+                                <span><i class="perfect"></i>Perfect</span><span><i class="good"></i>Good</span
+                                ><span><i class="miss"></i>Miss</span><span><i class="rest"></i>Rest</span>
+                            </div>
+                        </div>
+                        <aside class="scores">
+                            <h3>Scoreboard · Live</h3>
+                            <p class="muted" style="font-size: 11px">
+                                Streak = consecutive successful beats. Rest beats pause it.
+                            </p>
+                            <div id="scoreRows"></div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <section id="end" class="screen">
+                <div class="end">
+                    <div style="text-align: center">
+                        <div style="font-size: 52px">🏆</div>
+                        <small>THAT’S A WRAP</small>
+                        <h1 id="endTitle"></h1>
+                        <p id="endSubtitle" class="muted"></p>
+                    </div>
+                    <div id="podium" class="podium"></div>
+                    <section class="score-summary">
+                        <div class="summary-head">
+                            <div>
+                                <h2>Your round results</h2>
+                                <p>Each round shows every beat in order.</p>
+                            </div>
+                        </div>
+                        <label class="share-label" for="sharePreview">COPY RESULTS</label
+                        ><textarea id="sharePreview" class="share-preview" rows="12" readonly></textarea>
+                        <div class="history-key">
+                            ✓ Perfect · • Good · ✕ Miss · — Rest<br />Perfect +100 · Good +60 · Miss −10 · every 5
+                            successful beats +25<br />Miss all 54 scored beats: −540 points. Rest beats don’t count
+                            toward your score.
+                        </div>
+                    </section>
+                    <section class="full-rank">
+                        <h3>
+                            FULL RANKING
+                            <small style="font-size: 11px; color: #a4a6b7"
+                                >· Best hit streak counts consecutive successful beats; Rest beats pause it</small
+                            >
+                        </h3>
+                        <div id="finalScores"></div>
+                    </section>
+                    <div class="recap">
+                        <h3>THE POST-GAME TEA ☕</h3>
+                        <div id="recapLines"></div>
+                    </div>
+                    <div class="end-actions"><button class="primary" id="playAgainBtn">Play Again</button></div>
+                </div>
+            </section>
+        </main>
+        <div id="toast" class="toast"></div>
+        <script src="game.js" defer></script>
+    </body>
+</html>
