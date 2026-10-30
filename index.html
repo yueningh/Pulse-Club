@@ -3,7 +3,70 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Pulse Club</title>
+        <title>Pulse Club - Free Online Rhythm Party Game</title>
+
+        <meta
+        name="description"
+        content="Play Pulse Club, a free online multiplayer rhythm party game. Create a room, invite up to 8 players, tap to the beat, build streaks, and compete for the highest score."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#12141f" />
+
+    <link
+        rel="canonical"
+        href="https://pulse-clubb.netlify.app/"
+    />
+
+    <!-- Open Graph: social sharing previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pulse Club" />
+    <meta
+        property="og:title"
+        content="Pulse Club — Free Online Rhythm Party Game"
+    />
+    <meta
+        property="og:description"
+        content="Challenge your friends in a fast-paced multiplayer rhythm game. Catch the beat, build streaks, and own the leaderboard."
+    />
+    <meta
+        property="og:url"
+        content="https://pulse-clubb.netlify.app/"
+    />
+
+    <!-- X / Twitter sharing metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+        name="twitter:title"
+        content="Pulse Club — Free Online Rhythm Party Game"
+    />
+    <meta
+        name="twitter:description"
+        content="A free online rhythm party game for up to 8 players. Create a room and challenge your friends."
+    />
+
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Pulse Club",
+        "url": "https://pulse-clubb.netlify.app/",
+        "description": "A free online multiplayer rhythm party game where players tap to the beat, build streaks, and compete for the highest score.",
+        "genre": ["Rhythm Game", "Party Game", "Multiplayer Game"],
+        "gamePlatform": "Web browser",
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "maxValue": 8
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -15,6 +78,7 @@
             type="image/svg+xml"
             href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2312141f'/%3E%3Ccircle cx='32' cy='32' r='23' fill='%23D94A36'/%3E%3Cpath d='M14 33h9l5-11 8 22 5-11h9' fill='none' stroke='%2312141f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
         />
+
         <style>
             body {
                 margin: 0;
@@ -884,6 +948,102 @@
                     width: 100%;
                 }
             }
+
+.hero-title {
+    font-size: clamp(32px, 5.5vw, 65px) !important;
+    line-height: 1.1;
+    text-align: center;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: clamp(21px, 5.5vw, 32px) !important;
+    }
+}
+
+.hero-description {
+    text-align: center;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 12px auto;
+    color: #a4a6b7;
+}
+
+@media (max-width: 600px) {
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+/* SEO information dropdowns */
+.seo-dropdown {
+    margin-top: 12px;
+    border: 1px solid #373a50;
+    border-radius: 10px;
+    background: #171a28;
+    overflow: hidden;
+}
+
+.seo-dropdown summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    color: #f8f7ff;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.seo-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.seo-dropdown summary::after {
+    content: "+";
+    color: #d94a36;
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.seo-dropdown[open] summary::after {
+    content: "−";
+}
+
+.seo-dropdown summary:hover {
+    background: #222538;
+}
+
+.seo-dropdown summary:focus-visible {
+    outline: 2px solid #73dbff;
+    outline-offset: -3px;
+}
+
+.seo-dropdown-content {
+    padding: 0 16px 16px;
+    border-top: 1px solid #373a50;
+}
+
+.seo-dropdown-content h3 {
+    margin: 18px 0 6px;
+    color: #d94a36;
+}
+
+.seo-dropdown-content p {
+    margin: 0 0 12px;
+    line-height: 1.7;
+}
+
+.seo-dropdown-content p:last-child {
+    margin-bottom: 0;
+}
+
+        
         </style>
     </head>
     <body>
@@ -921,9 +1081,20 @@
                         ><span class="hero-beat-ring"></span><span class="hero-beat-core"></span>
                     </div>
                     <small style="color: #d94a36">✳ EVERY BEAT COUNTS</small>
-                    <h1>Feel the beat.<br /><em>Own the room.</em></h1>
-                    <p class="muted">A fast, chaotic rhythm party game. No music skills needed.</p>
-                    <p class="muted">Read the pattern, catch the beat, and keep your streak alive. Up to 8 players.</p>
+                    <h1 class="hero-title">
+                        Free Online Rhythm Party Game.<br />
+                        <em>Feel the Beat. Own the Room.</em>
+                    </h1>
+
+                    <p class="hero-description">
+                        Pulse Club is a fast-paced multiplayer rhythm game<br />
+                        where every tap counts. No music skills needed.
+                    </p>
+
+                    <p class="hero-description">
+                        Create a private room, invite up to 7 friends,<br />
+                        hit challenging beats, rack up streaks, and chase high scores.
+                    </p>
                 </div>
                 <div class="cards">
                     <div class="card">
@@ -958,7 +1129,93 @@
                     ><span>✦ <b>Streak bonuses</b></span
                     ><span>☺ <b>No knockouts</b></span>
                 </div>
+
+            <section class="card" id="about-pulse-club">
+    <h2>About Pulse Club</h2>
+
+    <details class="seo-dropdown">
+        <summary>How to Play Pulse Club</summary>
+
+        <div class="seo-dropdown-content">
+            <h3>Challenge Your Rhythm and Timing</h3>
+            <p class="muted">
+                Pulse Club is a free browser-based rhythm party game
+                where every tap counts. Follow the beat patterns and
+                tap at the right moment to earn points. Perfect hits,
+                successful streaks, and increasingly challenging
+                rounds make every match a test of timing and consistency.
+            </p>
+
+            <h3>Play With Friends Online</h3>
+            <p class="muted">
+                Create a private room and share the room code with
+                your friends. Everyone joins on their own device
+                and competes in the same multiplayer match.
+            </p>
+
+            <h3>Build Streaks and Compete for the Highest Score</h3>
+            <p class="muted">
+                Play through five rising rounds, earn points for
+                accurate timing, and build streak bonuses. Track
+                everyone's performance on the live scoreboard and
+                see who takes the top spot in the final rankings.
+            </p>
+
+            <h3>No Download Required</h3>
+            <p class="muted">
+                Pulse Club runs in a supported web browser, so you
+                can jump into a game without installing a separate
+                application.
+            </p>
+        </div>
+    </details>
+
+    <details class="seo-dropdown">
+        <summary>Frequently Asked Questions</summary>
+
+        <div class="seo-dropdown-content">
+            <h3>Is Pulse Club free to play?</h3>
+            <p class="muted">
+                Yes. Pulse Club is a free online rhythm party game
+                that you can play in a supported web browser.
+            </p>
+
+            <h3>Can I play Pulse Club with friends?</h3>
+            <p class="muted">
+                Yes. Create a room, share the room code, and invite
+                your friends to join the same multiplayer match.
+            </p>
+
+            <h3>How many players can join a game?</h3>
+            <p class="muted">
+                Pulse Club supports up to 8 players in a match.
+            </p>
+
+            <h3>Do I need to download anything?</h3>
+            <p class="muted">
+                No separate game download is required. Open the
+                website in a supported browser to play.
+            </p>
+
+            <h3>How many rounds are in a match?</h3>
+            <p class="muted">
+                Each match has five rounds, with increasingly
+                challenging rhythm patterns.
+            </p>
+
+            <h3>How do you score points?</h3>
+            <p class="muted">
+                Perfect hits earn 100 points, good hits earn 60
+                points, and misses lose 10 points. Every five
+                successful beats also earns a 25-point streak bonus.
+            </p>
+        </div>
+    </details>
+</section>
             </section>
+
+
+
             <section id="lobby" class="screen">
                 <div class="lhead">
                     <div>
@@ -1063,6 +1320,7 @@
                     <div class="end-actions"><button class="primary" id="playAgainBtn">Play Again</button></div>
                 </div>
             </section>
+            
         </main>
         <div id="toast" class="toast"></div>
         <script src="./game.js" defer></script>

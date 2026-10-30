@@ -454,30 +454,65 @@ export function createGameService({
   return { execute };
 }
 
+
 export async function handleGameRequest(request, service) {
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Cache-Control": "no-store"
+  };
+
   if (request.method === "OPTIONS") {
     return new Response(null, {
       status: 204,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "content-type"
-      }
+      headers: corsHeaders
     });
   }
+
   if (request.method !== "POST") {
-    return Response.json({ error: "Use POST for game actions." }, { status: 405, headers: { Allow: "POST, OPTIONS" } });
+    return Response.json(
+      { error: "Use POST for game actions." },
+      {
+        status: 405,
+        headers: {
+          ...corsHeaders,
+          Allow: "POST, OPTIONS"
+        }
+      }
+    );
   }
+
   let input;
+
   try {
     input = await request.json();
   } catch {
-    return Response.json({ error: "Request body must be valid JSON." }, { status: 400 });
+    return Response.json(
+      { error: "Request body must be valid JSON." },
+      {
+        status: 400,
+        headers: corsHeaders
+      }
+    );
   }
-  const result = await service.execute(input);
-  return Response.json(result.body, {
-    status: result.status,
-    headers: { "Cache-Control": "no-store" }
-  });
-}
 
+  try {
+    const result = await service.execute(input);
+
+    return Response.json(result.body, {
+      status: result.status,
+      headers: corsHeaders
+    });
+  } catch (error) {
+    console.error("Game request failed:", error);
+
+    return Response.json(
+      { error: "The game service encountered an error." },
+      {
+        status: 500,
+        headers: corsHeaders
+      }
+    );
+  }
+}
