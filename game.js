@@ -61,18 +61,21 @@ function unlockAudio() {
   if (context && context.state === "suspended") context.resume().catch(() => {});
 }
 function applyAudioPrefs() {
-  $("beatSoundToggle").checked = audioPrefs.beats;
-  $("effectSoundToggle").checked = audioPrefs.effects;
+  $("beatSoundToggle").checked = audioPrefs.beats && !audioPrefs.muted;
+  $("effectSoundToggle").checked = audioPrefs.effects && !audioPrefs.muted;
   $("audioMute").setAttribute("aria-pressed", String(audioPrefs.muted));
   $("audioMute").textContent = audioPrefs.muted ? "Unmute all" : "Mute all";
+  if (audioPrefs.beats || audioPrefs.effects) {
+    initAudio();
+  }
   if (masterGain && audioCtx) {
     const now = audioCtx.currentTime;
     masterGain.gain.cancelScheduledValues(now);
-    masterGain.gain.setTargetAtTime(audioPrefs.muted ? 0 : 0.75, now, 0.015);
+    masterGain.gain.setValueAtTime(audioPrefs.muted ? 0 : 0.75, now);
   }
-  if (audioPrefs.beats || audioPrefs.effects) unlockAudio();
   saveAudioPrefs();
 }
+
 function toneAt(when, frequency, duration, wave, volume) {
   if (!audioCtx || !masterGain || audioPrefs.muted) return;
   try {
@@ -115,15 +118,31 @@ function streakSound(delay) {
   toneAt(time, 698, 0.045, "sine", 0.04);
   toneAt(time + 0.055, 932, 0.06, "triangle", 0.04);
 }
+
 function setupAudioControls() {
-  $("beatSoundToggle").checked = audioPrefs.beats;
-  $("effectSoundToggle").checked = audioPrefs.effects;
-  $("audioMute").setAttribute("aria-pressed", String(audioPrefs.muted));
-  $("audioMute").textContent = audioPrefs.muted ? "Unmute all" : "Mute all";
-  $("beatSoundToggle").onchange = (event) => { audioPrefs.beats = event.target.checked; applyAudioPrefs(); };
-  $("effectSoundToggle").onchange = (event) => { audioPrefs.effects = event.target.checked; applyAudioPrefs(); };
-  $("audioMute").onclick = () => { audioPrefs.muted = !audioPrefs.muted; applyAudioPrefs(); };
+  applyAudioPrefs();
+  $("beatSoundToggle").onchange = (event) => {
+    audioPrefs.beats = event.target.checked;
+    if (audioPrefs.muted) {
+      audioPrefs.muted = false;
+    }
+    applyAudioPrefs();
+  };
+
+  $("effectSoundToggle").onchange = (event) => {
+    audioPrefs.effects = event.target.checked;
+    if (audioPrefs.muted) {
+      audioPrefs.muted = false;
+    }
+    applyAudioPrefs();
+  };
+
+  $("audioMute").onclick = () => {
+    audioPrefs.muted = !audioPrefs.muted;
+    applyAudioPrefs();
+  };
 }
+
 
 function view(id) {
   screens.forEach((screen) => $(screen).classList.toggle("active", screen === id));
